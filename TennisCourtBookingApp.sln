@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TennisCourtBookingApp", "TennisCourtBookingApp\TennisCourtBookingApp.csproj", "{FDF52E59-B6B0-4305-89D2-97F419C3997B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TennisCourtData", "TennisCourtData\TennisCourtData.csproj", "{9BE3F037-EAB2-4EE2-8091-293BC389F52C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FDF52E59-B6B0-4305-89D2-97F419C3997B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDF52E59-B6B0-4305-89D2-97F419C3997B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDF52E59-B6B0-4305-89D2-97F419C3997B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDF52E59-B6B0-4305-89D2-97F419C3997B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BE3F037-EAB2-4EE2-8091-293BC389F52C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BE3F037-EAB2-4EE2-8091-293BC389F52C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BE3F037-EAB2-4EE2-8091-293BC389F52C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BE3F037-EAB2-4EE2-8091-293BC389F52C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3A1815E8-0E8A-44EC-8B2D-A15DF2E17524}
+	EndGlobalSection
+EndGlobal

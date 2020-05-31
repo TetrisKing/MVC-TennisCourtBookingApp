@@ -1,0 +1,16 @@
+﻿@model TennisCourtData.Models.Slot
+
+@if (Model.booking == null)
+{
+    <div class="slot">
+        <p>@Model.name</p>
+        @Html.ActionLink("-BOOK-", "CreateBooking", new { slotId = Model.id })
+    </div>
+}
+else
+{
+    <div class="slot bookingexists">
+        <p>@Model.name</p>
+        @Html.ActionLink(@Model.booking.name, "EditBooking", new { bookingId = Model.booking.id })
+    </div>
+}

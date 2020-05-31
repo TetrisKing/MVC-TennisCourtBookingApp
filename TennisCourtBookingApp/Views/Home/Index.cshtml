@@ -1,0 +1,28 @@
+﻿@model List<TennisCourtData.Models.Court>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<div class="row">
+    Tennis Bookings
+</div>
+@if (TempData.ContainsKey("message"))
+{
+    @Html.Partial("_InfoMessageBox", TempData["message"])
+}
+<div class="table">
+    @foreach (var court in Model)
+    {
+        <div>
+            @court.name
+        </div>
+        <div class="court table-row">
+            @foreach (var slot in court.slots.OrderBy(s => s.order))
+            {
+                @Html.Partial("_Slot", slot)
+            }
+        </div>
+    }
+</div>

@@ -1,4 +1,4 @@
-﻿@model TennisCourtData.Models.Booking
+﻿@model TennisCourtBookingApp.Models.BookingViewModel
 
 @{
     ViewBag.Title = "View";
@@ -11,48 +11,46 @@
 {
     @Html.AntiForgeryToken()
 
-    <div class="form-horizontal">
-        <h4>Booking</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.id)
-        @Html.HiddenFor(model => model.slot.id)
+<div class="form-horizontal">
+    <h4>Booking</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.booking.id)
 
-        <div>
-            <div class="form-group">
-                @Html.LabelFor(model => model.slot.court.name, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.DisplayFor(model => model.slot.court.name, new { htmlAttributes = new { @class = "form-control" } })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.slot.name, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.DisplayFor(model => model.slot.name, new { htmlAttributes = new { @class = "form-control" } })
-                </div>
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.name, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="panel form-group">
+            @Html.LabelFor(model => model.booking.slot.court.name, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.name, "", new { @class = "text-danger" })
+                @Html.DisplayFor(model => model.booking.slot.court.name, new { @class = "form-control" })
             </div>
         </div>
 
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value=@(Model.id < 0 ? "Create" : "Save") class="btn btn-default" />
-                @if (Model.id >= 0)
-                {
-                    @Html.ActionLink("Delete", "DeleteBooking", new { bookingId = Model.id }, new { @class = "btn btn-danger" });
-                }
-            </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.booking.slot.name, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("selectedSlotId", Model.availableSlots, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.availableSlots, "", new { @class = "text-danger" })
         </div>
     </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.booking.name, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.booking.name, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.booking.name, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value=@(Model.booking.id < 0 ? "Create" : "Save") class="btn btn-default" />
+            @if (Model.booking.id >= 0)
+            {
+                @Html.ActionLink("Delete", "DeleteBooking", new { bookingId = Model.booking.id }, new { @class = "btn btn-danger" });
+            }
+        </div>
+    </div>
+</div>
 }
 
 <div>

@@ -56,9 +56,9 @@ namespace TennisCourtData
             return slots.Fetch(id);
         }
 
-        public IEnumerable<Slot> GetSlots()
-        {
-            return slots;
+        public IEnumerable<Slot> GetSlots(int? courtId = null)
+        {            
+            return courtId == null || !courtId.HasValue ? slots : slots.Where(s => s.court.id == courtId);
         }
 
         public Booking SetBooking(Booking booking)
@@ -75,6 +75,12 @@ namespace TennisCourtData
             }
             else {
                 existing.Update(booking);
+                if (existing.slot.id != booking.slot.id)
+                {
+                    existing.slot.booking = null;
+                    existing.slot = GetSlot(booking.slot.id);
+                    existing.slot.booking = existing;
+                }
             }
             return existing;
         }

@@ -15,7 +15,7 @@ namespace TennisCourtData
 
 
         Slot GetSlot(int id);
-        IEnumerable<Slot> GetSlots();
+        IEnumerable<Slot> GetSlots(int? courtId = null);
         Slot SetSlot(Slot slot);
 
 

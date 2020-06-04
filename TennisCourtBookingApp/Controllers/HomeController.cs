@@ -94,6 +94,11 @@ namespace TennisCourtBookingApp.Controllers
             return RedirectToAction("Index");
         }
 
+        public PartialViewResult GetStats() {
+            var courts = dal.GetCourts();
+            return PartialView("_Stats", courts);
+        }
+
         private void AddBookingTempDataMessage(Booking book, string action)
         {
             if (book != null)

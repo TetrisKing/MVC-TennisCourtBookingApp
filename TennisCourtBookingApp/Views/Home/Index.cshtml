@@ -12,6 +12,9 @@
 {
     @Html.Partial("_InfoMessageBox", TempData["message"])
 }
+
+@Html.Action("getstats")
+
 <div class="table">
     @foreach (var court in Model)
     {
